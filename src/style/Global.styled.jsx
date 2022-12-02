@@ -4,13 +4,15 @@ import styled from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 body {
-  background:#e0e0e0;
+  background:#ebecf0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.2px;
+  font-size: 16px;
 }
 
 code {
@@ -43,7 +45,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 25px;
   padding: 20px;
 `;

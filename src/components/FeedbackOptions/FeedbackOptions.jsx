@@ -1,17 +1,22 @@
-export const FeedbackOptions = ({
-  counterGood,
-  counterNeutral,
-  counterBad,
-}) => (
+import PropTypes from 'prop-types';
+import { Button } from './FeedbackOptions.styled';
+
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   <>
-    <button type="button" onClick={counterGood}>
-      Good
-    </button>
-    <button type="button" onClick={counterNeutral}>
-      Neutral
-    </button>
-    <button type="button" onClick={counterBad}>
-      Bad
-    </button>
+    {options.map(option => (
+      <Button
+        key={option}
+        type="button"
+        name={option}
+        onClick={onLeaveFeedback}
+      >
+        {option[0].toUpperCase() + option.slice(1)}
+      </Button>
+    ))}
   </>
 );
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
